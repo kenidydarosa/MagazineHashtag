@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="style.css" />
   <link rel="shortcut icon" href="assets/logo/icons8-diamante-96.png" type="image/x-icon">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
 
 <body>
   <section id="bag" class="closeBag">
@@ -20,10 +21,10 @@
       </button>
     </div>
     <section id="container-products-bag">
-      
-    </section> 
+
+    </section>
     <div id="footerBag">
-      <div id="valueTotalBag">$10.000.00</div>
+      <div id="valueTotalBag"></div>
       <button id="finalizeBuy" class="text">Finalizar compra</button>
     </div>
   </section>
@@ -31,13 +32,13 @@
     <div id="logo">
       <span class="material-icons-round">
         diamond
-        </span>
-        <div id="letters-logo">&nbsp<span id="initial-letters">Dia</span>mont</div>
+      </span>
+      <div id="letters-logo">&nbsp<span id="initial-letters">Dia</span>mont</div>
     </div>
     <div id="blockSearch">
       <input id="search-text" type="text">
       <span id="icoSearch" class="material-icons-round">
-      search
+        search
       </span>
     </div>
     <div id="botoes">
@@ -49,29 +50,31 @@
         <div id="icons">
           <button id="notifications" class="btnIcons">
             <div id="icoNotification" class="numNotification">3</div>
-            <span class="material-icons-round">
+            <span class="material-icons-outlined">
               notifications
             </span>
           </button>
-          <button id="favorite" class="btnIcons" >
-            <span class="material-icons-round">
-              favorite
-              </span>
+          <button id="favorite" class="btnIcons">
+            <span class="material-icons-outlined">
+              favorite_border
+            </span>
           </button>
           <button id="open-bag" class="btnIcons">
-            <div id="bagNotification" class="numNotification">2</div>
-            <span class="material-icons-round">
-              shopping_cart
+            <div id="bagNotification" class="numNotification"></div>
+            <span class="material-icons-outlined">
+              local_mall
             </span>
           </button>
         </div>
       </div>
     </div>
   </header>
-  <main>
-    <span id="listOptions" class="material-icons-round">
-      menu
+  <main id="mainIndex">
+    <div id="listOptions">
+      <span class="material-icons-round">
+        menu
       </span>
+    </div>
     <div id="blockListOptions">
       <nav>
         <ul>
@@ -80,12 +83,86 @@
           <a href="#" class="btnFilter">Infantil</a>
           <a href="#" class="btnFilter">Acessórios</a>
           <a href="#" class="btnFilter">Sapatos</a>
+          <a href="#" class="btnFilter">Perfumes</a>
           <a href="#" class="btnFilter">Todos</a>
         </ul>
       </nav>
       <span id="closeMenu" class="material-icons-round">
         close
+      </span>
+    </div>
+    <div id="slider">
+      <section id="slides">
+        <div id="img1" class="slide first">
+          <picture>
+            <source media="(max-width: 800px)" srcset="assets/img/imgCapa12-pq.jpg">
+            <img src="assets/img/imgCapa1.jpg" alt="capa">
+          </picture>
+        </div>
+        <div class="slide">
+          <picture>
+            <source media="(max-width: 800px)" srcset="assets/img/imgCapa2-pq.jpg">
+            <img src="assets/img/imgCapa2.jpg" alt="capa">
+          </picture>
+        </div>
+        <div class="slide">
+          <picture>
+            <source media="(max-width: 800px)" srcset="assets/img/imgCapa3-pq.jpg">
+            <img src="assets/img/imgCapa3.jpg" alt="capa">
+          </picture>
+        </div>
+        <div class="slide">
+          <picture>
+            <source media="(max-width: 800px)" srcset="assets/img/imgCapa41-pq.jpg">
+            <img src="assets/img/imgCapa4.jpg" alt="capa">
+          </picture>
+        </div>
+      </section>
+      <div id="btnImgTransition">
+        <div id="1" class="btnImgCapa"></div>
+        <div id="2" class="btnImgCapa"></div>
+        <div id="3" class="btnImgCapa"></div>
+        <div id="4" class="btnImgCapa"></div>
+      </div>
+    </div>
+    <div id="iconsSale">
+      <div>
+        <span class="material-icons-outlined">
+          discount
         </span>
+        <div class="LegendsSales">
+          <div class="legendsTitle">Descontos</div>
+          <div class="legendsComplements">no pagamento por boleto</div>
+        </div>
+      </div>
+      <div>
+        <span class="material-icons-outlined">
+          delivery_dining
+        </span>
+        <div class="LegendsSales">
+          <div class="legendsTitle">Entrega grátis</div>
+          <div class="legendsComplements">para todo Brasil</div>
+        </div>
+      </div>
+      <div>
+        <span class="material-icons-outlined">
+          support_agent
+        </span>
+        <div class="LegendsSales">
+          <div class="legendsTitle">Atendimento</div>
+          <div class="legendsComplements">via WhatsApp</div>
+        </div>
+      </div>
+      <div>
+        <span class="material-icons-outlined">
+          verified_user
+        </span>
+        <div class="LegendsSales">
+          <div class="legendsTitle">Loja 100% confiável</div>
+          <div class="legendsComplements">compre com tranquilidade</div>
+        </div>
+      </div>
+
     </div>
     <section id="container-product">
       <div id="container-card-product"></div>
@@ -94,26 +171,29 @@
   <footer>
     <div>
       <span class="material-icons-round iconFooter">
-      credit_card
+        credit_card
       </span>
-      Escolha como pagar
-Com o Mercado Pago, você paga com cartão, boleto ou Pix. Você também pode pagar em até 12x no boleto com o Mercado Crédito.
 
-Como pagar com Mercado Pago
+      Escolha como pagar
+      Com o Mercado Pago, você paga com cartão, boleto ou Pix. Você também pode pagar em até 12x no boleto com o Mercado
+      Crédito.
+
+      Como pagar com Mercado Pago
     </div>
     <div>
       <span class="material-icons-round iconFooter">
-      inventory_2
+        inventory_2
       </span>
       Frete grátis a partir de R$ 79
-Ao se cadastrar no Mercado Livre, você tem frete grátis em milhares de produtos.
+      Ao se cadastrar no Mercado Livre, você tem frete grátis em milhares de produtos.
     </div>
     <div>
       <span class="material-icons-round iconFooter">
-      verified_user
+        verified_user
       </span>
       Segurança, do início ao fim
-Você não gostou do que comprou? Devolva! No Mercado Livre não há nada que você não possa fazer, porque você está sempre protegido.
+      Você não gostou do que comprou? Devolva! No Mercado Livre não há nada que você não possa fazer, porque você está
+      sempre protegido.
     </div>
   </footer>
   <script type="module" src="main.js"></script>
