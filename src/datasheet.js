@@ -353,7 +353,7 @@ export function productGenerate(newDatasheet) {
             <p class='price text'>
               R$${product.price.toFixed(2)}
             </p>
-            <p class='priceBefore'>
+            <p class='priceBefore text'>
               R$${(product.price * 1.1).toFixed(2)}
             </p>
           </div>
