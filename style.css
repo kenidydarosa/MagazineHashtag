@@ -30,7 +30,7 @@ header {
   align-items: center;
   box-shadow: var(--shadow);
   position: fixed;
-  z-index: 100;
+  z-index: 9;
   top: -2px;
   width: 100%;
 }
@@ -226,7 +226,7 @@ span:hover {
   width: 100%;
 }
 .card {
-  width: 250px;
+  width: 200px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -245,7 +245,7 @@ span:hover {
   margin: -10px -10px 4px -10px;
   box-shadow: var(--shadow);
   transition: opacity .5s ease;
-  width: 250px;
+  width: 200px;
 }
 
 #slider{
@@ -256,7 +256,7 @@ span:hover {
 #slides{
   display: flex;
   overflow: hidden;
-  height: 400px;
+  /* height: 400px; */
   width: 400%;
 }
 .slide{
@@ -275,7 +275,7 @@ span:hover {
   bottom: 10px;
   right: 30px;
   display: flex;
-  z-index: 10;
+  z-index: 8;
   gap: 10px;
 }
 .btnImgCapa{
@@ -332,14 +332,14 @@ span.star {
   flex-direction: column;
   justify-content: space-between;
   padding: 15px 15px 0px 15px;
-  background-color: var(--color-1);
+  background-color: var(--color-1 );
   color: black;
   box-shadow: var(--shadow);
   position: fixed;
   width: 360px;
-  height: 100%;
+  height: 100vh;
   top: 0;
-  z-index: 11;
+  z-index: 10;
   transition: all 0.5s ease;
 }
 #header-bag {
@@ -414,9 +414,41 @@ p.description {
   width: 37px;
 }
 
-
 .openBag {
+  transition: all .3s ease;
+  animation: .5s next;
   right: 0;
+}
+.closeBag {
+  transition: all .3s ease;
+  animation: .5s back;
+  right: -100%;
+}
+@keyframes back{
+  0%{
+    right: 0px;
+    width: 394px;
+  }
+  50%{
+    right: 0px;
+    width: 390px;
+  }
+  100%{
+    right: -100%;
+  }
+}
+@keyframes next{
+  0%{
+    right: -100%;
+  }
+  50%{
+    right: 0px;
+    width: 394px;
+  }
+  100%{
+    right: 0px;
+    width: 390px;
+  }
 }
 #mainContent {
   align-items: center;
@@ -432,9 +464,7 @@ p.description {
   margin-top: 100px;
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.25);
 }
-.closeBag {
-  right: -100%;
-}
+
 footer {
   background-color: rgb(235, 235, 235);
   display: flex;
@@ -521,11 +551,12 @@ span.iconFooter {
 #blockImgMain {
   justify-content: center;
   display: flex;
-  width: 100%;
+  max-width: 110%;
 }
 .imgDetailProduct {
   min-width: 330px;
-  max-width: 95%;
+  /* max-width: 95%; */
+  max-width: 100%;
   max-height: 500px;
   border-radius: 10px;
 }
@@ -642,7 +673,6 @@ h4 {
     margin: 35px 0;
     order: 1;
   }
-
   header {
     padding-bottom: 10px;
   }
@@ -654,9 +684,12 @@ h4 {
   }
   #blockDescriptionDetails {
     max-width: 100%;
-    min-width: 0;
   }
 }
+@media (max-width: 780px) {
+  .imgProduct,.card {
+    width:155px;
+  }}
 @media (max-width: 480px) {
   #login {
     display: none;
@@ -668,7 +701,7 @@ h4 {
   #listOptions {
     display: flex;
     position: fixed;
-    z-index: 30;
+    z-index: 9;
     height: 30px;
     top: 190px;
     left: 10px;
@@ -687,7 +720,7 @@ h4 {
     width: 254px;
     top: 168px;
     left: -100%;
-    z-index: 30;
+    z-index: 8;
     padding: 10px;
     height: 100%;
     align-items: start;
@@ -702,7 +735,7 @@ h4 {
     flex-direction: column;
   }
   #bag {
-    width: 98%;
+    width: 100%;
   }
   #cardDetailsProduct {
     flex-direction: column;
@@ -724,6 +757,7 @@ h4 {
     justify-content: space-between;
     width: 100%;
     order: 1;
+    padding: 10px;
   }
   .imgDetailProduct {
     min-width: auto;
