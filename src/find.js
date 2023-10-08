@@ -22,8 +22,8 @@ var interval = null;
 
   const btnCapa = document.getElementsByClassName('btnImgCapa')
   const imgCapa = document.getElementById('slider')
-  imgCapa.addEventListener('mouseover', () => clearInterval(interval))
-  imgCapa.addEventListener('mouseout', () => nextImage())
+  imgCapa.addEventListener('mouseenter', () => clearInterval(interval))
+  imgCapa.addEventListener('mouseleave', () => nextImage())
   
   for (var bt of btnCapa) {
     bt.addEventListener('click', (event) => transitionCapa(event.target.id))

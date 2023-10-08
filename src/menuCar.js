@@ -1,11 +1,12 @@
 import { datasheet, infoProduct } from './datasheet.js';
-  var bag = JSON.parse(localStorage.getItem('bag'));
+  // var bag = JSON.parse(localStorage.getItem('bag'));
   
-  if(bag == null){
-    var bag = [];
-    localStorage.setItem(`bag`, JSON.stringify(bag));
-    var bag = JSON.parse(localStorage.getItem('bag'));
-  }
+  var bag = JSON.parse(localStorage.getItem('bag'))??[];
+  // if(bag == null){
+  //   var bag = [];
+  //   localStorage.setItem(`bag`, JSON.stringify(bag));
+  //   var bag = JSON.parse(localStorage.getItem('bag'));
+  // }
 
 function openBagProduct() {
   document.getElementById('bag').classList.remove('closeBag');
@@ -31,7 +32,8 @@ export function initializeBag() {
 }
 
 function getProductInBag() {
-  const productBag = JSON.parse(localStorage.getItem(`bag`));
+  // const productBag = JSON.parse(localStorage.getItem(`bag`));
+  var productBag = bag;
   const containerBag = document.getElementById('container-products-bag');
   containerBag.innerHTML = '';
 
@@ -66,16 +68,18 @@ function getProductInBag() {
 
 export function addInBag(idProduct) {
   const product = datasheet.find((p) => p.id === idProduct);
-  var productBag = JSON.parse(localStorage.getItem(`bag`));
+  // var productBag = JSON.parse(localStorage.getItem(`bag`));
+  var productBag = bag;
   var findInBag = productBag.find((p) => p.id === idProduct);
 
   if (findInBag !== undefined) {
-    alert('o elemento existe dentro da div');
+    toastAlert('error', 'O elemento já está no carrinho');
   } else {
     bag.push(product);
     localStorage.setItem(`bag`, JSON.stringify(bag));
     getProductInBag();
     updateBag();
+    toastAlert('success','O item foi adicionado ao carrinho!');
   }
 }
 
@@ -110,7 +114,7 @@ function decrement(event) {
   if (qtdItem.innerText > 1) {
     qtdItem.innerText--;
   } else {
-    alert('Quantidade não pode ser menor que 1');
+    toastAlert('error','Quantidade não pode ser menor que 1');
   }
   updateBag();
 }
@@ -157,5 +161,24 @@ export function updateBag() {
   totalValue.innerHTML = totalBag.toLocaleString('pt-BR', {
     style: 'currency',
     currency: 'USD',
+  });
+}
+
+export function toastAlert(icon, message) {
+  const Toast = Swal.mixin({
+    toast: true,
+    position: 'top-end',
+    showConfirmButton: false,
+    showCloseButton: true,
+    timer: 3000,
+    timerProgressBar: true,
+    didOpen: (toast) => {
+      toast.addEventListener('mouseenter', Swal.stopTimer);
+      toast.addEventListener('mouseleave', Swal.resumeTimer);
+    },
+  });
+  Toast.fire({
+    icon: icon,
+    title: message,
   });
 }

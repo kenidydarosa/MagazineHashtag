@@ -97,7 +97,14 @@
               <p class="detailsColor"><a href="#">Ver meios de pagamento</a></p>
             </div>
             <div>
-              <p>Chegará gratis quarta feira</p>
+              <div id="cep">
+                <input id="getCep" type="text" placeholder="Digite seu CEP">
+                <span id="searchCep" class="material-icons-outlined">
+                  search
+                  </span>
+              </div>
+              <p id="getApiCep"></p>
+              <p id="msgCep"></p>
               <p class="detailsColor"><a href="#">Mais formas de entrega</a></p>
             </div>
             <div id="blockButtons">
@@ -285,6 +292,8 @@ Você não gostou do que comprou? Devolva! No Mercado Livre não há nada que vo
     </div>
   </footer>
   <script type="module" src="src/detailsProduct.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 </body>
 
 </html>

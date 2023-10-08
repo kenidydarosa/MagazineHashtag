@@ -375,8 +375,8 @@ export function productGenerate(newDatasheet) {
   }
   var imgCard = document.getElementsByClassName('imgProduct');
   for (var img of imgCard) {
-    img.addEventListener('mouseover', (event) => mouseOver(event));
-    img.addEventListener('mouseout', (event) => mouseOut(event));
+    img.addEventListener('mouseenter', (event) => mouseOver(event));
+    img.addEventListener('mouseleave', (event) => mouseOut(event));
   }
 }
 

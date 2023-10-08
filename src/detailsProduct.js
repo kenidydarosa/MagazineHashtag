@@ -1,5 +1,5 @@
-import { addInBag } from './menuCar.js';
-import { initializeBag,addEventClick } from './menuCar.js';
+import { addInBag, initializeBag, addEventClick } from './menuCar.js';
+import { getAddress } from './APiCep.js';
 
 function getInfoProduct() {
   const imagMain = document.getElementById('imgMain');
@@ -19,7 +19,7 @@ function getInfoProduct() {
   imagPq2.src = `assets/img/${product.nameFileImg3}`;
   imagPq3.src = `assets/img/${product.nameFileImg4}`;
   imagPq4.src = `assets/img/${product.nameFileImg1}`;
-  
+
   description.innerText = product.description;
   nameDatails.innerText = product.name;
 
@@ -43,7 +43,7 @@ const imgHover = document.getElementsByClassName('imgPq');
 
 for (let img of imgHover) {
   const imgHoverBt = img;
-  imgHoverBt.addEventListener('mouseover', (event) => mouseMove(event));
+  imgHoverBt.addEventListener('mouseleave', (event) => mouseMove(event));
 }
 export function infoProduct(id) {
   const idItem = id;
@@ -58,3 +58,11 @@ function mouseMove(event) {
 initializeBag();
 getInfoProduct();
 addEventClick();
+
+let btnSearch = document.getElementById('searchCep');
+btnSearch.addEventListener('click', getCep);
+
+function getCep() {
+  let cep = document.getElementById('getCep').value;
+  getAddress(cep);
+}
