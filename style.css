@@ -705,8 +705,11 @@ h4 {
 }
 @media (max-width: 780px) {
   .imgProduct,.card {
-    width:140px;
+    width:150px;
   }}
+  .card{
+    margin: 20px 5px;
+  }
 @media (max-width: 480px) {
   #login {
     display: none;
