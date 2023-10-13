@@ -5,8 +5,7 @@ export const datasheet = [
     id: 1,
     brand: 'Zara',
     name: 'Jaqueta denin limited edition',
-    description: `Jaqueta de gola com lapela e manga comprida. Aplique de bolsos de patch com aba na 
-    frente e na manga. Efeito de lavagem. Fecho frontal de botões ocultos por aba.`,
+    description: `Jaqueta de gola com lapela e manga comprida. Aplique de bolsos de patch com aba na frente e na manga. Efeito de lavagem. Fecho frontal de botões ocultos por aba.`,
     price: 799.9,
     nameFileImg1: 'product-1-1.jpg',
     nameFileImg2: 'product-1-2.jpg',
@@ -18,8 +17,7 @@ export const datasheet = [
     id: 2,
     brand: 'Zara',
     name: 'Jaqueta biker de couro',
-    description: `Jaqueta confeccionada em couro. Gola com lapelas com detalhe de botões de pressão.
-    Manga comprida com acabamento em punho com zíper. Bolsos com zíper no peito e com aba na cintura. 
+    description: `Jaqueta confeccionada em couro. Gola com lapelas com detalhe de botões de pressão. Manga comprida com acabamento em punho com zíper. Bolsos com zíper no peito e com aba na cintura. 
     Detalhe de bolso`,
     price: 1299,
     nameFileImg1: 'product-2-1.jpg',
@@ -32,8 +30,7 @@ export const datasheet = [
     id: 3,
     brand: 'Zara',
     name: 'Jaqueta bomber com remendo',
-    description: `Jaqueta varsity confeccionada em tecido efeito camurça. Gola de abas e manga comprida. 
-    Bolsos de dupla abertura debruada e pormenor de bolso no interior. Aplique de remendo e bordado combinados`,
+    description: `Jaqueta varsity confeccionada em tecido efeito camurça. Gola de abas e manga comprida. Bolsos de dupla abertura debruada e pormenor de bolso no interior. Aplique de remendo e bordado combinados`,
     price: 479,
     nameFileImg1: 'product-3-1.jpg',
     nameFileImg2: 'product-3-2.jpg',
@@ -45,8 +42,7 @@ export const datasheet = [
     id: 4,
     brand: 'Zara',
     name: 'ZW vestido denim com bolsos',
-    description: `Vestido midi de gola com lapela e manga comprida com acabamento em punho. Bolsos de patch com aba 
-    e botão na frente.`,
+    description: `Vestido midi de gola com lapela e manga comprida com acabamento em punho. Bolsos de patch com aba e botão na frente.`,
     price: 439,
     nameFileImg1: 'product-4-1.jpg',
     nameFileImg2: 'product-4-2.jpg',
@@ -58,8 +54,7 @@ export const datasheet = [
     id: 5,
     brand: 'Zara',
     name: 'Vestido midi estampado',
-    description: `Vestido midi confeccionado em viscose. Decote em V e manga comprida. 
-    Cintura ajustável com cordões do mesmo tecido. Forro interior. Parte inferior com acabamento de babados.`,
+    description: `Vestido midi confeccionado em viscose. Decote em V e manga comprida. Cintura ajustável com cordões do mesmo tecido. Forro interior. Parte inferior com acabamento de babados.`,
     price: 699,
     nameFileImg1: 'product-5-1.jpg',
     nameFileImg2: 'product-5-2.jpg',
@@ -226,7 +221,7 @@ export const datasheet = [
     nameFileImg1: 'product-17-1.jpg',
     nameFileImg2: 'product-17-2.jpg',
     nameFileImg3: 'product-17-3.jpg',
-    nameFileImg4: 'product-17-4jpg',
+    nameFileImg4: 'product-17-4.jpg',
     categorie: 'Sapatos',
   },
   {

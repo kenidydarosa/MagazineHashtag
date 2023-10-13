@@ -1,9 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 * {
   margin: 0;
   padding: 0;
-  font-family: 'Roboto', Arial, sans-serif;
+  font-family: 'Poppins', Arial, sans-serif;
   box-sizing: border-box;
 }
 
@@ -11,7 +12,8 @@
   --color-1: white;
   --color-2: rgba(90, 45, 130, 0.856);
   --color-3: rgb(183, 183, 183);
-  --color-4: rgb(90, 45, 130);
+  /* --color-4: rgb(90, 45, 130); */
+  --color-4: rgb(59 40 77);
   --color-5: black;
   --color-6: rgb(90, 86, 86);
   --shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2);
@@ -20,6 +22,7 @@
 body {
   overflow-x: hidden;
   width: 100vw;
+  background-color: rgb(236, 235, 235);
 }
 header {
   background-color: var(--color-1);
@@ -34,20 +37,25 @@ header {
   top: -2px;
   width: 100%;
 }
+main{
+  background-color: var(--color-1);
+  box-shadow: 0 1px 15px 4px rgba(211, 211, 211, 0.637);
+  border-radius: 30px;
+}
 #mainIndex {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin: auto;
-  margin-top: 100px;
   width: 85%;
+  margin-top: 100px;
 }
 button {
   all: unset;
 }
 #logo {
-  padding: 0 10px;
-  border-radius: 5px;
+  padding: 0px 12px;
+  border-radius: 30px;
   border: 1px solid var(--color-4);
   cursor: pointer;
 }
@@ -157,7 +165,7 @@ ul > a:hover {
   background-color: rgb(247, 247, 249);
   width: 500px;
   padding: 5px 15px;
-  border-radius: 7px;
+  border-radius: 30px;
   border-width: 1.5px;
   display: flex;
   justify-content: space-between;
@@ -189,14 +197,16 @@ span:hover {
   display: flex;
   justify-content: space-between;
   gap: 10px;
-  /* width: 250px; */
+  width: 250px;
   width: 100%;
-  min-width: 197px;
+  min-width: 230px;
 }
 #iconsSale span.material-icons-outlined {
   font-size: 2em;
   display: flex;
   align-items: center;
+  width: 30%;
+  justify-content: center;
 }
 .LegendsSales {
   display: flex;
@@ -210,27 +220,34 @@ span:hover {
 .legendsComplements {
   font-size: 13px;
 }
-#container-product {
-  top: 300px;
-  display: flex;
-  align-items: center;
+#title{
+  font-size: 1.2em;
+  justify-content: left;
   width: 100%;
-  justify-content: center;
+  padding: 13px 41px 0 41px;
+}
+#container-product {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    gap: 20px;
 }
 #container-card-product {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   width: 100%;
+  gap: 20px;
 }
 .card {
-  width: 200px;
+  width: 220px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   margin: 20px 15px;
   border-bottom: 1px solid lightgray;
-  border-radius: 7px;
+  border-radius: 30px;
   transition: 0.5s ease;
   padding: 10px;
   cursor: pointer;
@@ -239,15 +256,41 @@ span:hover {
   box-shadow: 0px 0px 15px 5px rgba(180, 177, 177, 0.349);
 }
 .imgProduct {
-  border-radius: 7px;
+  border-radius: 30px;
   margin: -10px -10px 4px -10px;
   box-shadow: var(--shadow);
   transition: opacity .5s ease;
-  width: 200px;
+  width: 220px;
 }
 
+/* #scroller{
+  position: relative;
+  width: 120%;
+  height: 500px;
+  display: flex;
+  background-color: var(--color-5);
+  overflow: hidden;
+}
+
+#scrolling{
+  position: absolute;
+  display: flex;
+  width: 400%;
+}
+
+div.firstScroll{
+  animation: 6s keyScroller infinite;
+}
+@keyframes keyScroller{
+  0%{
+    left: -50%;
+  }
+  100%{
+    left: 110%;
+  }
+} */
 #slider{
-  width: 100vw;
+  width: 100%;
   position: relative;
   overflow:hidden ;
 }
@@ -341,16 +384,22 @@ span.star {
 #header-bag {
   display: flex;
   justify-content: space-between;
+  margin: 0 2px;
 }
 .product-bag {
   display: flex;
   justify-content: space-between;
   border: 1px solid lightgrey;
+  align-items: center;
   border-radius: 10px;
   padding: 10px;
   font-size: 13px;
   box-shadow: var(--shadowPurple);
-  margin: 15px 0;
+  margin: 15px 2px;
+}
+.product-bag:hover .price{
+  transition: all .5s ease;
+  color:green
 }
 .description-bag {
   width: 210px;
@@ -373,12 +422,17 @@ span.star {
 #finalizeBuy {
   background-color: var(--color-4);
   color: var(--color-1);
-  border-radius: 5px;
-  padding: 7px;
+  border-radius: 30px;
+  padding: 7px 15px;
+  cursor: pointer;
+  transition: all 1s ease;
+}
+#finalizeBuy:hover {
+  background-color: var(--color-2);
 }
 #valueTotalBag {
   font-weight: bold;
-  font-size: 16px;
+  font-size: 18px;
   display: inline-flex;
 }
 p.description {
@@ -390,7 +444,7 @@ p.description {
 }
 .price {
   font-weight: bold;
-  font-size: 14px;
+  font-size: 17px;
   display: inline-flex;
 }
 .priceBefore {
@@ -399,8 +453,8 @@ p.description {
   display: inline-flex;
 }
 .img-car {
-  width: 40px;
-  height: 60px;
+  width: 45px;
+  height: 65px;
   border-radius: 7px;
   cursor: pointer;
 }
@@ -427,29 +481,31 @@ p.description {
   flex-direction: column;
   padding: 15px;
   margin: 10px;
-  border-radius: 10px;
+  border-radius: 30px;
   margin: auto;
   margin-top: 100px;
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.25);
 }
 
 footer {
-  background-color: rgb(235, 235, 235);
+  background-color: var(--color-4);
+  color: var(--color-1);
   display: flex;
   flex-wrap: wrap;
   margin: 50px 0 0 0;
   padding: 50px;
   justify-content: space-around;
   width: 100%;
-  height: 100%;
+  height: 90vh;
 }
 
 footer > div {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 300px;
-  height: 300px;
+  justify-content: space-between;
+  width: 30%;
+  height: 50%;
   padding: 30px;
   margin: 15px;
   border: 1px solid lightgray;
@@ -464,10 +520,12 @@ footer > div {
 .flex {
   display: flex;
   align-items: center;
+  gap:5px
 }
 .btnQtd {
-  width: 15px;
-  margin: 0 5px;
+  width: 20px;
+  height: 20px;
+  margin: 3px 0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -478,9 +536,8 @@ footer > div {
 }
 
 span.iconFooter {
-  color: var(--color-4);
+  color: var(--color-1);
   font-size: 50px;
-  margin: 30px;
 }
 #closeMenu {
   display: none;
@@ -513,10 +570,14 @@ span.iconFooter {
 }
 .imgPq {
   width: 50px;
-  border-radius: 5px;
+  border-radius: 15px;
   cursor: pointer;
+  border: 1px solid transparent;
+  transition: all 1s ease;
 }
-
+.imgPq:hover{
+  border: 1px solid var(--color-5);
+}
 #blockImgMain {
   justify-content: center;
   display: flex;
@@ -527,7 +588,7 @@ span.iconFooter {
   min-width: 330px;
   max-width: 100%;
   max-height: 500px;
-  border-radius: 10px;
+  border-radius: 30px;
 }
 #blockImg {
   display: flex;
@@ -541,21 +602,21 @@ span.iconFooter {
   justify-content: space-between;
   width: 100%;
   max-width: 395px;
-  padding: 10px;
+  padding: 20px;
   border: 1px solid rgba(211, 211, 211, 0.575);
-  border-radius: 10px;
+  border-radius: 30px;
   flex-grow: 1;
 }
 #blockDescriptionDetails p {
-  margin: 15px 0;
+  margin-bottom: 5px;
 }
 #nameDatails {
   font-size: 25px;
-  font-weight: 500;
+  font-weight: bold;
 }
 #priceDetails {
   font-size: 28px;
-  font-weight: 400;
+  font-weight: bold;
 }
 #nameDatails {
   margin: 8px 0;
@@ -564,7 +625,7 @@ span.iconFooter {
   padding: 10px 0;
   width: 100%;
   margin: 5px;
-  border-radius: 5px;
+  border-radius: 30px;
   justify-content: center;
   border: 1px solid var(--color-4);
   cursor: pointer;
@@ -598,14 +659,25 @@ span.iconFooter {
   font-size: 15px;
 }
 .btnQtdDetails {
-  width: 7px;
+  width: 20px;
+  height: 20px;
   text-align: center;
-  padding: 2px 8px;
-  border-radius: 3px;
+  padding: 3px;
+  margin-bottom: 5px;
+  border-radius: 30px;
   border: 1px solid var(--color-4);
+}
+.bold{
+  font-weight: bold;
 }
 a {
   all: unset;
+}
+.link{
+  cursor: pointer;
+}
+.link:hover{
+  text-decoration: underline;
 }
 #textProduct {
   background-color: rgba(226, 224, 224, 0.411);
@@ -613,7 +685,7 @@ a {
   padding: 20px;
   text-align: justify;
   line-height: 1.5em;
-  border-radius: 10px;
+  border-radius: 30px;
   font-size: 0.9em;
   display: flex;
   flex-direction: column;
@@ -640,13 +712,14 @@ h4 {
 #cep{
   display: flex;
   width: 100%;
-  padding: 10px;
+  padding: 10px 15px;
   align-items: center;
-  border-radius: 5px;
+  border-radius: 30px;
+  margin: 10px 0;
   border: 1px solid lightgray;
   justify-content: space-between;
 }
-#getApiCep{
+#blockMsgCep> p{
   font-style: italic;
 }
 @media (max-width: 1170px) {
@@ -658,14 +731,14 @@ h4 {
 @media (max-width: 960px) {
   #blockSearch {
     flex-grow: 1;
-    margin: 35px 0;
+    margin: 25px 0 13px 0;
     order: 1;
   }
   header {
     padding-bottom: 10px;
   }
   #mainIndex {
-    margin-top: 200px;
+    margin-top: 148px;
   }
   #cardDetailsProduct {
     flex-wrap: wrap;
@@ -680,18 +753,25 @@ h4 {
     width: 80%;
     flex-direction: column;
   }
-
+  footer{
+    height: 100%;
+  }
+  footer> div{
+    width: 100%;
+    height: 350px;
+    /* height: 50%; */
+  }
   #listOptions {
     display: flex;
     position: fixed;
     z-index: 9;
     height: 30px;
-    top: 190px;
-    left: 10px;
+    top: 137px;
+    left: 20px;
     margin: 15px 0;
     padding: 5px;
-    width: 50px;
-    height: 50px;
+    width: 45px;
+    height: 45px;
     border-radius: 50%;
     align-items: center;
     justify-content: center;
@@ -701,9 +781,9 @@ h4 {
   #blockListOptions {
     position: fixed;
     width: 254px;
-    top: 168px;
+    top: 0;
     left: -100%;
-    z-index: 8;
+    z-index: 13;
     padding: 10px;
     height: 100%;
     align-items: start;
@@ -737,7 +817,7 @@ h4 {
     flex-direction: column;
     align-items: center;
     padding: 10px;
-    border-radius: 10px;
+    border-radius: 30px;
     border: 1px solid lightgray;
   }
   #blockImg {
@@ -751,6 +831,7 @@ h4 {
   .imgDetailProduct {
     border-radius: 5px;
     max-height: 100%;
+    border-radius: 23px;
   }
   #blockImgPq {
     flex-direction: row;
@@ -770,5 +851,7 @@ h4 {
     border-radius: 0;
     border: none;
     padding: 0;
+    border-top: 1px solid lightgrey;
+
   }
 }

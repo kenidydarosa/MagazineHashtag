@@ -1,4 +1,9 @@
-import { addInBag, initializeBag, addEventClick } from './menuCar.js';
+import {
+  addInBag,
+  initializeBag,
+  addEventClick,
+  SwalAlert,
+} from './menuCar.js';
 import { getAddress } from './APiCep.js';
 
 function getInfoProduct() {
@@ -63,6 +68,32 @@ let btnSearch = document.getElementById('searchCep');
 btnSearch.addEventListener('click', getCep);
 
 function getCep() {
-  let cep = document.getElementById('getCep').value;
+  var cep = document.getElementById('getCep').value;
   getAddress(cep);
 }
+let btnBuy = document.getElementById('buy');
+var cep = document.getElementById('getCep');
+btnBuy.addEventListener('click', () => {
+  if (cep.value != '') {
+    getAddress(cep.value)
+    SwalAlert(
+      'success',
+      'Compra finalizada',
+      'Sua compra foi efetuada com sucesso!',
+      2000,
+      true,
+      false,
+      false
+    );
+  } else {
+    SwalAlert(
+      'error',
+      'Campo não preenchido',
+      'Informe o Cep!',
+      2000,
+      true,
+      false,
+      false
+    );
+  }
+});

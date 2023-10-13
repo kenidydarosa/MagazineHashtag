@@ -1,12 +1,6 @@
 import { datasheet, infoProduct } from './datasheet.js';
-  // var bag = JSON.parse(localStorage.getItem('bag'));
-  
-  var bag = JSON.parse(localStorage.getItem('bag'))??[];
-  // if(bag == null){
-  //   var bag = [];
-  //   localStorage.setItem(`bag`, JSON.stringify(bag));
-  //   var bag = JSON.parse(localStorage.getItem('bag'));
-  // }
+
+var bag = JSON.parse(localStorage.getItem('bag')) ?? [];
 
 function openBagProduct() {
   document.getElementById('bag').classList.remove('closeBag');
@@ -68,18 +62,17 @@ function getProductInBag() {
 
 export function addInBag(idProduct) {
   const product = datasheet.find((p) => p.id === idProduct);
-  // var productBag = JSON.parse(localStorage.getItem(`bag`));
   var productBag = bag;
   var findInBag = productBag.find((p) => p.id === idProduct);
 
   if (findInBag !== undefined) {
-    toastAlert('error', 'O elemento já está no carrinho');
+    SwalAlert('error','Erro', 'O elemento já está no carrinho',2000,true,false);
   } else {
     bag.push(product);
     localStorage.setItem(`bag`, JSON.stringify(bag));
     getProductInBag();
     updateBag();
-    toastAlert('success','O item foi adicionado ao carrinho!');
+    SwalAlert('success', 'Sucesso','O item foi adicionado ao carrinho!',2000,true,false);
   }
 }
 
@@ -92,7 +85,7 @@ export function addEventClick() {
   const buttonsIncrement = document.getElementsByClassName('btnIncrement');
   for (var x of buttonsIncrement) {
     let itemInc = x;
-    itemInc.addEventListener('click', (event) => increment(event));
+    itemInc.addEventListener('mousedown', (event) => increment(event));
   }
   const buttonsDelete = document.getElementsByClassName('btnDelete');
   for (var x of buttonsDelete) {
@@ -102,7 +95,7 @@ export function addEventClick() {
   const btnImg = document.getElementsByClassName('img-car');
   for (var x of btnImg) {
     let btImg = x;
-    btImg.addEventListener('click', (event) => infoProduct(event))
+    btImg.addEventListener('click', (event) => infoProduct(event.target.id));
   }
 }
 
@@ -114,7 +107,7 @@ function decrement(event) {
   if (qtdItem.innerText > 1) {
     qtdItem.innerText--;
   } else {
-    toastAlert('error','Quantidade não pode ser menor que 1');
+    toastAlert('error', 'Quantidade não pode ser menor que 1');
   }
   updateBag();
 }
@@ -160,7 +153,7 @@ export function updateBag() {
   }
   totalValue.innerHTML = totalBag.toLocaleString('pt-BR', {
     style: 'currency',
-    currency: 'USD',
+    currency: 'BRL',
   });
 }
 
@@ -182,3 +175,23 @@ export function toastAlert(icon, message) {
     title: message,
   });
 }
+export function SwalAlert(
+  icon,
+  title,
+  message,
+  timer,
+  buttonConfirm,
+  butonCancel,
+  timerProgressBar
+) {
+  swal.fire({
+    icon: icon,
+    title: title,
+    text: message,
+    timer: timer,
+    showConfirmButton: buttonConfirm,
+    showCancelButton: butonCancel,
+    timerProgressBar: timerProgressBar,
+  });
+}
+
