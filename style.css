@@ -87,6 +87,7 @@ nav {
   display: flex;
   width: 100%;
   justify-content: center;
+  border-bottom: 1px solid lightgrey;
 }
 nav > ul {
   display: flex;
@@ -293,6 +294,7 @@ div.firstScroll{
   width: 100%;
   position: relative;
   overflow:hidden ;
+  height: 400px;
 }
 
 #slides{
@@ -385,6 +387,7 @@ span.star {
   display: flex;
   justify-content: space-between;
   margin: 0 2px;
+  color: var(--color-4);
 }
 .product-bag {
   display: flex;
@@ -826,6 +829,7 @@ h4 {
   }
   main#mainDetails {
     margin-top: 100px;
+    width: 100%;
   }
   .imgDetailProduct {
     border-radius: 5px;
